@@ -54,11 +54,15 @@ body {
   gap: 0.75rem;
 }
 
+.logo-image {
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+}
+
 .logo-text {
-  font-size: 1.1rem;
-  font-weight: bold;
-  line-height: 1.1;
-  text-align: left;
+  display: flex;
+  flex-direction: column;
 }
 
 .logo-ai {
@@ -66,34 +70,16 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  font-size: 1.2rem;
-}
-
-.logo-asset {
-  background: linear-gradient(135deg, #22d3ee, #3b82f6);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  font-size: 1rem;
-}
-
-.logo-persona {
-  background: linear-gradient(135deg, #22d3ee, #3b82f6);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  font-size: 1rem;
-  letter-spacing: 0.1em;
+  font-size: 1.1rem;
+  font-weight: bold;
+  line-height: 1;
 }
 
 .logo-subtitle {
-  font-size: 0.9rem;
-  font-weight: 600;
+  font-size: 0.75rem;
+  font-weight: 500;
   color: #94a3b8;
-  background: rgba(34, 211, 238, 0.1);
-  padding: 0.25rem 0.5rem;
-  border-radius: 6px;
-  border: 1px solid rgba(34, 211, 238, 0.2);
+  margin-top: 2px;
 }
 
 .streak-counter {
