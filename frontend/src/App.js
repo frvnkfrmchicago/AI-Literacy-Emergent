@@ -347,75 +347,382 @@ const App = () => {
     {
       id: 'ai-tools',
       title: 'AI Tools You Can Use Today',
-      description: 'Practical AI tools that can enhance your productivity right now.',
+      description: 'Master the hottest AI tools that are revolutionizing work and creativity in 2025.',
       icon: '🛠️',
       unlocked: () => userProgress.completedModules.includes('ai-ethics'),
-      xpReward: 125,
+      xpReward: 250,
       lessons: [
         {
-          title: 'ChatGPT and Language Models',
+          title: 'ChatGPT & Google Gemini: AI Assistants Revolution',
           type: 'interactive',
           content: `
             <div class="lesson-content">
-              <h3>ChatGPT & Language Models: Your AI Writing Assistant</h3>
-              <div class="tool-overview">
-                <div class="what-it-does">
-                  <h4>What it does:</h4>
-                  <ul>
-                    <li>✍️ Writes and edits text</li>
-                    <li>🔍 Answers questions</li>
-                    <li>💡 Brainstorms ideas</li>
-                    <li>🔧 Helps with coding</li>
-                    <li>📚 Explains complex topics</li>
-                  </ul>
+              <h3>The AI Assistant Battle: ChatGPT vs Google Gemini</h3>
+              <div class="ai-assistant-comparison">
+                <div class="assistant-card chatgpt">
+                  <h4>🤖 ChatGPT (OpenAI)</h4>
+                  <div class="strengths">
+                    <h5>Strengths:</h5>
+                    <ul>
+                      <li>Excellent creative writing and storytelling</li>
+                      <li>Strong coding assistance and debugging</li>
+                      <li>Great for brainstorming and ideation</li>
+                      <li>Consistent, conversational responses</li>
+                    </ul>
+                  </div>
+                  <div class="best-for">
+                    <h5>🎯 Best For:</h5>
+                    <p>Content creation, programming help, creative projects, learning complex topics</p>
+                  </div>
                 </div>
-                <div class="how-to-use">
-                  <h4>Pro Tips for Better Results:</h4>
-                  <div class="tip">
-                    <h5>Be Specific</h5>
-                    <p>❌ "Write about marketing"<br>✅ "Write a 300-word email marketing strategy for a small bakery"</p>
+                
+                <div class="assistant-card gemini">
+                  <h4>💎 Google Gemini</h4>
+                  <div class="strengths">
+                    <h5>Strengths:</h5>
+                    <ul>
+                      <li>Real-time internet access for current info</li>
+                      <li>Integration with Google services (Gmail, Docs, etc.)</li>
+                      <li>Strong analytical and research capabilities</li>
+                      <li>Multimodal (text, images, video understanding)</li>
+                    </ul>
                   </div>
-                  <div class="tip">
-                    <h5>Give Context</h5>
-                    <p>❌ "Make this better"<br>✅ "Make this email more professional for a client presentation"</p>
-                  </div>
-                  <div class="tip">
-                    <h5>Ask for Structure</h5>
-                    <p>❌ "Explain AI"<br>✅ "Explain AI in 3 bullet points for a business presentation"</p>
+                  <div class="best-for">
+                    <h5>🎯 Best For:</h5>
+                    <p>Research, current events, Google workspace integration, data analysis</p>
                   </div>
                 </div>
               </div>
-              <div class="other-tools">
-                <h4>Other Powerful AI Tools:</h4>
-                <div class="tool">
-                  <h5>🎨 DALL-E / Midjourney</h5>
-                  <p>Create images from text descriptions</p>
+              
+              <div class="pro-prompting-guide">
+                <h4>🚀 Master Prompting Techniques</h4>
+                <div class="prompting-framework">
+                  <h5>The CLEAR Framework:</h5>
+                  <div class="framework-step">
+                    <strong>C - Context:</strong> "You are a marketing expert helping a small bakery..."
+                  </div>
+                  <div class="framework-step">
+                    <strong>L - Length:</strong> "Write a 200-word email..."
+                  </div>
+                  <div class="framework-step">
+                    <strong>E - Examples:</strong> "Similar to how Apple markets simplicity..."
+                  </div>
+                  <div class="framework-step">
+                    <strong>A - Audience:</strong> "For busy working parents aged 25-40..."
+                  </div>
+                  <div class="framework-step">
+                    <strong>R - Role:</strong> "Act as a professional copywriter..."
+                  </div>
                 </div>
-                <div class="tool">
-                  <h5>🎵 Suno AI</h5>
-                  <p>Generate music and songs</p>
-                </div>
-                <div class="tool">
-                  <h5>📹 Runway ML</h5>
-                  <p>AI video editing and creation</p>
-                </div>
-                <div class="tool">
-                  <h5>💻 GitHub Copilot</h5>
-                  <p>AI coding assistant</p>
+                
+                <div class="prompt-examples">
+                  <div class="example">
+                    <h6>❌ Weak Prompt:</h6>
+                    <p>"Write about marketing"</p>
+                  </div>
+                  <div class="example">
+                    <h6>✅ Strong Prompt:</h6>
+                    <p>"You are a digital marketing consultant. Write a 300-word strategy for a local coffee shop to increase Instagram engagement among college students aged 18-24. Include 3 specific tactics with expected outcomes, similar to how Starbucks uses user-generated content."</p>
+                  </div>
                 </div>
               </div>
             </div>
           `,
           quiz: {
-            question: "What's the key to getting better results from AI tools like ChatGPT?",
+            question: "What's the main advantage of Google Gemini over ChatGPT?",
             options: [
-              "Use as few words as possible",
-              "Be specific and provide context",
-              "Only ask yes/no questions",
-              "Avoid giving examples"
+              "Better creative writing capabilities",
+              "Real-time internet access and Google integration",
+              "Faster response times",
+              "Better at coding tasks"
             ],
             correct: 1,
-            explanation: "The more specific and contextual your prompts, the better AI can understand and help you!"
+            explanation: "Gemini's real-time internet access and deep Google services integration make it superior for research and current information tasks!"
+          }
+        },
+        {
+          title: 'Leonardo AI & DALL-E: The Creative Revolution',
+          type: 'interactive',
+          content: `
+            <div class="lesson-content">
+              <h3>AI Art Generation: From Concept to Masterpiece</h3>
+              
+              <div class="ai-art-tools">
+                <div class="tool-showcase leonardo">
+                  <h4>🎨 Leonardo AI</h4>
+                  <div class="tool-features">
+                    <div class="feature">
+                      <h5>🎯 Specialty: Realistic Art & Characters</h5>
+                      <ul>
+                        <li>Photorealistic portraits and landscapes</li>
+                        <li>Game character design and concept art</li>
+                        <li>Architectural visualization</li>
+                        <li>Fashion and product photography</li>
+                      </ul>
+                    </div>
+                    <div class="pricing">
+                      <h6>💰 Pricing:</h6>
+                      <p>Free tier: 150 tokens/day | Pro: $10/month</p>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="tool-showcase dalle">
+                  <h4>🖼️ DALL-E 3</h4>
+                  <div class="tool-features">
+                    <div class="feature">
+                      <h5>🎯 Specialty: Creative & Stylized Art</h5>
+                      <ul>
+                        <li>Artistic styles and abstract concepts</li>
+                        <li>Marketing visuals and logos</li>
+                        <li>Illustration and cartoon styles</li>
+                        <li>Text integration in images</li>
+                      </ul>
+                    </div>
+                    <div class="pricing">
+                      <h6>💰 Pricing:</h6>
+                      <p>ChatGPT Plus: $20/month | API: $0.04 per image</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="prompt-mastery">
+                <h4>🎨 Master Art Prompting</h4>
+                <div class="prompt-structure">
+                  <h5>The Perfect Art Prompt Structure:</h5>
+                  <div class="prompt-parts">
+                    <div class="part">
+                      <strong>1. Subject:</strong> "A confident businesswoman"
+                    </div>
+                    <div class="part">
+                      <strong>2. Style:</strong> "in the style of Annie Leibovitz photography"
+                    </div>
+                    <div class="part">
+                      <strong>3. Details:</strong> "wearing a navy blue suit, sitting at a modern glass desk"
+                    </div>
+                    <div class="part">
+                      <strong>4. Lighting:</strong> "with dramatic side lighting"
+                    </div>
+                    <div class="part">
+                      <strong>5. Quality:</strong> "8K, ultra-detailed, professional photography"
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="style-examples">
+                  <h5>🎨 Popular Style Keywords:</h5>
+                  <div class="styles-grid">
+                    <div class="style-tag">Photorealistic</div>
+                    <div class="style-tag">Cinematic</div>
+                    <div class="style-tag">Minimalist</div>
+                    <div class="style-tag">Cyberpunk</div>
+                    <div class="style-tag">Watercolor</div>
+                    <div class="style-tag">Concept Art</div>
+                    <div class="style-tag">Studio Photography</div>
+                    <div class="style-tag">Digital Art</div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="real-world-applications">
+                <h4>💼 Real Business Applications:</h4>
+                <div class="application">
+                  <h5>📱 Social Media Content</h5>
+                  <p>Create custom visuals for Instagram, LinkedIn posts, and marketing campaigns</p>
+                </div>
+                <div class="application">
+                  <h5>🏢 Business Presentations</h5>
+                  <p>Generate professional illustrations, icons, and concept visuals</p>
+                </div>
+                <div class="application">
+                  <h5>🛍️ E-commerce</h5>
+                  <p>Product mockups, lifestyle images, and promotional graphics</p>
+                </div>
+                <div class="application">
+                  <h5>📚 Content Creation</h5>
+                  <p>Blog headers, infographics, and educational visuals</p>
+                </div>
+              </div>
+            </div>
+          `,
+          quiz: {
+            question: "What's Leonardo AI's main strength compared to DALL-E?",
+            options: [
+              "Better text integration",
+              "Lower pricing",
+              "More photorealistic and character-focused art",
+              "Faster generation speed"
+            ],
+            correct: 2,
+            explanation: "Leonardo AI excels at photorealistic art, character design, and game concept art, while DALL-E is better for creative and stylized art!"
+          }
+        },
+        {
+          title: 'AI Video & Music: Suno, Runway, and More',
+          type: 'interactive',
+          content: `
+            <div class="lesson-content">
+              <h3>The Future is Here: AI-Generated Media</h3>
+              
+              <div class="media-tools-showcase">
+                <div class="media-tool suno">
+                  <h4>🎵 Suno AI - AI Music Generation</h4>
+                  <div class="tool-capabilities">
+                    <h5>What it does:</h5>
+                    <ul>
+                      <li>Generates complete songs with lyrics and vocals</li>
+                      <li>Multiple genres: Pop, Rock, Jazz, Electronic, etc.</li>
+                      <li>Custom lyrics or AI-generated lyrics</li>
+                      <li>Professional-quality audio output</li>
+                    </ul>
+                    <div class="use-cases">
+                      <h6>💡 Use Cases:</h6>
+                      <p>Podcast intros, background music, jingles, personal songs, prototyping</p>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="media-tool runway">
+                  <h4>🎬 Runway ML - AI Video Creation</h4>
+                  <div class="tool-capabilities">
+                    <h5>Powerful Features:</h5>
+                    <ul>
+                      <li>Text-to-video generation</li>
+                      <li>Image-to-video animation</li>
+                      <li>Video editing and effects</li>
+                      <li>Green screen removal</li>
+                      <li>Motion tracking and object removal</li>
+                    </ul>
+                    <div class="use-cases">
+                      <h6>💡 Use Cases:</h6>
+                      <p>Social media content, product demos, marketing videos, creative projects</p>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="media-tool other-tools">
+                  <h4>🔧 Other Essential AI Tools</h4>
+                  <div class="tools-list">
+                    <div class="tool-item">
+                      <h5>💻 GitHub Copilot</h5>
+                      <p>AI pair programmer - writes code as you type</p>
+                    </div>
+                    <div class="tool-item">
+                      <h5>📝 Notion AI</h5>
+                      <p>AI writing assistant integrated into Notion workspace</p>
+                    </div>
+                    <div class="tool-item">
+                      <h5>🎙️ Murf AI</h5>
+                      <p>AI voice generation for podcasts and voiceovers</p>
+                    </div>
+                    <div class="tool-item">
+                      <h5>📊 Beautiful.AI</h5>
+                      <p>AI-powered presentation design</p>
+                    </div>
+                    <div class="tool-item">
+                      <h5>🔍 Perplexity AI</h5>
+                      <p>AI search engine with real-time information</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="ai-workflow">
+                <h4>🚀 Building an AI-Powered Workflow</h4>
+                <div class="workflow-example">
+                  <h5>Example: Creating a Marketing Campaign</h5>
+                  <div class="workflow-steps">
+                    <div class="workflow-step">
+                      <span class="step-number">1</span>
+                      <div class="step-content">
+                        <h6>Research & Planning</h6>
+                        <p><strong>Perplexity AI:</strong> Research market trends and competitor analysis</p>
+                      </div>
+                    </div>
+                    <div class="workflow-step">
+                      <span class="step-number">2</span>
+                      <div class="step-content">
+                        <h6>Content Creation</h6>
+                        <p><strong>ChatGPT/Gemini:</strong> Write compelling copy and social media posts</p>
+                      </div>
+                    </div>
+                    <div class="workflow-step">
+                      <span class="step-number">3</span>
+                      <div class="step-content">
+                        <h6>Visual Design</h6>
+                        <p><strong>Leonardo AI:</strong> Create eye-catching marketing visuals</p>
+                      </div>
+                    </div>
+                    <div class="workflow-step">
+                      <span class="step-number">4</span>
+                      <div class="step-content">
+                        <h6>Video Content</h6>
+                        <p><strong>Runway ML:</strong> Produce engaging video advertisements</p>
+                      </div>
+                    </div>
+                    <div class="workflow-step">
+                      <span class="step-number">5</span>
+                      <div class="step-content">
+                        <h6>Audio Branding</h6>
+                        <p><strong>Suno AI:</strong> Generate custom jingles and background music</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="productivity-boost">
+                  <h5>📈 Productivity Impact:</h5>
+                  <div class="impact-stats">
+                    <div class="stat">
+                      <div class="stat-number">10x</div>
+                      <div class="stat-label">Faster Content Creation</div>
+                    </div>
+                    <div class="stat">
+                      <div class="stat-number">80%</div>
+                      <div class="stat-label">Cost Reduction</div>
+                    </div>
+                    <div class="stat">
+                      <div class="stat-number">24/7</div>
+                      <div class="stat-label">Creative Availability</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="getting-started">
+                <h4>🎯 Your AI Tools Action Plan</h4>
+                <div class="action-steps">
+                  <div class="action-step">
+                    <h5>Week 1: Start with Assistants</h5>
+                    <p>Master ChatGPT or Gemini for daily tasks and content creation</p>
+                  </div>
+                  <div class="action-step">
+                    <h5>Week 2: Add Visual Creation</h5>
+                    <p>Experiment with Leonardo AI or DALL-E for images and graphics</p>
+                  </div>
+                  <div class="action-step">
+                    <h5>Week 3: Explore Specialized Tools</h5>
+                    <p>Try tools specific to your industry (coding, design, music, etc.)</p>
+                  </div>
+                  <div class="action-step">
+                    <h5>Week 4: Build Your Workflow</h5>
+                    <p>Integrate multiple AI tools into a seamless creative process</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          `,
+          quiz: {
+            question: "What's the most effective way to start using AI tools professionally?",
+            options: [
+              "Try all tools at once",
+              "Start with assistants, then gradually add specialized tools",
+              "Focus only on the most expensive tools",
+              "Wait for better technology"
+            ],
+            correct: 1,
+            explanation: "Starting with AI assistants gives you immediate value, then you can gradually add specialized tools to build a powerful AI workflow!"
           }
         }
       ]
