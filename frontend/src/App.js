@@ -529,13 +529,15 @@ const App = () => {
       <div className="header-content">
         <div className="logo-section">
           <div className="logo">
+            <img 
+              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg==" 
+              alt="AI Asset Persona Logo" 
+              className="logo-image"
+            />
             <div className="logo-text">
-              <span className="logo-ai">AI</span>
-              <span className="logo-asset">ASSET</span>
-              <br />
-              <span className="logo-persona">PERSONA</span>
+              <span className="logo-ai">AI ASSET PERSONA</span>
+              <div className="logo-subtitle">Learn</div>
             </div>
-            <div className="logo-subtitle">Learn</div>
           </div>
           <div className="streak-counter">
             🔥 {userProgress.streak} day streak
