@@ -1252,6 +1252,12 @@ const App = () => {
               <div className="xp-counter">
                 ⭐ {userProgress.totalXP} XP
               </div>
+              <button 
+                className="analytics-btn" 
+                onClick={() => setCurrentView(currentView === 'analytics' ? 'home' : 'analytics')}
+              >
+                📊 Analytics
+              </button>
               <button className="logout-btn" onClick={handleLogout}>
                 Logout
               </button>
