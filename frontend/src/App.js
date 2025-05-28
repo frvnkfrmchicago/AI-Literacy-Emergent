@@ -1563,11 +1563,78 @@ const App = () => {
     );
   };
 
+  const UserAnalytics = () => {
+    const allUsers = JSON.parse(localStorage.getItem('allUsers') || '[]');
+    
+    const analytics = {
+      totalUsers: allUsers.length,
+      activeUsers: allUsers.filter(u => {
+        const lastActive = new Date(u.lastActive);
+        const oneDayAgo = new Date();
+        oneDayAgo.setDate(oneDayAgo.getDate() - 1);
+        return lastActive > oneDayAgo;
+      }).length,
+      completedUsers: allUsers.filter(u => u.progress?.completedModules?.length >= 8).length,
+      averageProgress: allUsers.length > 0 ? 
+        allUsers.reduce((sum, u) => sum + (u.progress?.completedModules?.length || 0), 0) / allUsers.length : 0
+    };
+
+    return (
+      <div className="analytics-container">
+        <h2>User Analytics Dashboard</h2>
+        <div className="analytics-grid">
+          <div className="analytics-card">
+            <div className="analytics-number">{analytics.totalUsers}</div>
+            <div className="analytics-label">Total Signups</div>
+          </div>
+          <div className="analytics-card">
+            <div className="analytics-number">{analytics.activeUsers}</div>
+            <div className="analytics-label">Active (24h)</div>
+          </div>
+          <div className="analytics-card">
+            <div className="analytics-number">{analytics.completedUsers}</div>
+            <div className="analytics-label">Course Completed</div>
+          </div>
+          <div className="analytics-card">
+            <div className="analytics-number">{analytics.averageProgress.toFixed(1)}</div>
+            <div className="analytics-label">Avg Modules/User</div>
+          </div>
+        </div>
+        
+        <div className="user-list">
+          <h3>Recent Users</h3>
+          <div className="user-table">
+            <div className="table-header">
+              <span>Name</span>
+              <span>Email</span>
+              <span>Progress</span>
+              <span>Last Active</span>
+            </div>
+            {allUsers.slice(-10).reverse().map(user => (
+              <div key={user.id} className="table-row">
+                <span>{user.name}</span>
+                <span>{user.email}</span>
+                <span>{user.progress?.completedModules?.length || 0}/8 modules</span>
+                <span>{new Date(user.lastActive).toLocaleDateString()}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+        
+        <button className="back-to-course" onClick={() => setCurrentView('home')}>
+          Back to Course
+        </button>
+      </div>
+    );
+  };
+
   return (
     <div className="app">
       <Header />
       <main className="main-content">
+        {currentView === 'signup' && <SignupForm />}
         {currentView === 'home' && !selectedModule && <Dashboard />}
+        {currentView === 'analytics' && <UserAnalytics />}
         {selectedModule && <LessonView />}
       </main>
     </div>
