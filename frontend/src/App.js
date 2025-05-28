@@ -1228,7 +1228,7 @@ const App = () => {
         <div className="logo-section">
           <div className="logo">
             <img 
-              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg==" 
+              src="/api/placeholder/40/40" 
               alt="AI Asset Persona Logo" 
               className="logo-image"
             />
@@ -1237,16 +1237,156 @@ const App = () => {
               <div className="logo-subtitle">Learn</div>
             </div>
           </div>
-          <div className="streak-counter">
-            🔥 {userProgress.streak} day streak
-          </div>
+          {currentUser && (
+            <div className="user-info">
+              <span className="welcome-text">Welcome, {currentUser.name}!</span>
+              <div className="streak-counter">
+                🔥 {userProgress.streak} day streak
+              </div>
+            </div>
+          )}
         </div>
-        <div className="xp-counter">
-          ⭐ {userProgress.totalXP} XP
+        <div className="header-right">
+          {currentUser && (
+            <>
+              <div className="xp-counter">
+                ⭐ {userProgress.totalXP} XP
+              </div>
+              <button className="logout-btn" onClick={handleLogout}>
+                Logout
+              </button>
+            </>
+          )}
         </div>
       </div>
     </header>
   );
+
+  const SignupForm = () => {
+    const [formData, setFormData] = useState({
+      name: '',
+      email: ''
+    });
+    const [errors, setErrors] = useState({});
+
+    const handleInputChange = (e) => {
+      setFormData({
+        ...formData,
+        [e.target.name]: e.target.value
+      });
+      // Clear errors when user starts typing
+      if (errors[e.target.name]) {
+        setErrors({
+          ...errors,
+          [e.target.name]: ''
+        });
+      }
+    };
+
+    const validateForm = () => {
+      const newErrors = {};
+      
+      if (!formData.name.trim()) {
+        newErrors.name = 'Name is required';
+      }
+      
+      if (!formData.email.trim()) {
+        newErrors.email = 'Email is required';
+      } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+        newErrors.email = 'Please enter a valid email';
+      }
+      
+      return newErrors;
+    };
+
+    const handleSubmit = (e) => {
+      e.preventDefault();
+      const formErrors = validateForm();
+      
+      if (Object.keys(formErrors).length > 0) {
+        setErrors(formErrors);
+        return;
+      }
+
+      // Add signup timestamp
+      const userData = {
+        ...formData,
+        signupDate: new Date().toISOString(),
+        id: Date.now().toString()
+      };
+
+      handleSignup(userData);
+    };
+
+    return (
+      <div className="signup-container">
+        <div className="signup-form">
+          <div className="signup-header">
+            <img 
+              src="/api/placeholder/80/80" 
+              alt="AI Asset Persona Logo" 
+              className="signup-logo"
+            />
+            <h1>Master AI Concepts</h1>
+            <p>Join thousands learning artificial intelligence through interactive lessons</p>
+          </div>
+          
+          <form onSubmit={handleSubmit} className="form">
+            <div className="form-group">
+              <label htmlFor="name">Full Name</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                value={formData.name}
+                onChange={handleInputChange}
+                className={errors.name ? 'error' : ''}
+                placeholder="Enter your full name"
+              />
+              {errors.name && <span className="error-message">{errors.name}</span>}
+            </div>
+            
+            <div className="form-group">
+              <label htmlFor="email">Email Address</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                value={formData.email}
+                onChange={handleInputChange}
+                className={errors.email ? 'error' : ''}
+                placeholder="Enter your email address"
+              />
+              {errors.email && <span className="error-message">{errors.email}</span>}
+            </div>
+            
+            <button type="submit" className="signup-btn">
+              Start Learning AI
+            </button>
+          </form>
+          
+          <div className="signup-features">
+            <div className="feature">
+              <span className="feature-icon">🎓</span>
+              <span>8 Comprehensive Modules</span>
+            </div>
+            <div className="feature">
+              <span className="feature-icon">🏆</span>
+              <span>Gamified Learning Experience</span>
+            </div>
+            <div className="feature">
+              <span className="feature-icon">💼</span>
+              <span>Career Guidance & Tools</span>
+            </div>
+            <div className="feature">
+              <span className="feature-icon">📱</span>
+              <span>Mobile-Friendly Platform</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  };
 
   const ModuleCard = ({ module }) => {
     const isUnlocked = module.unlocked === true || (typeof module.unlocked === 'function' && module.unlocked());
