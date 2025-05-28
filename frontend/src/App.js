@@ -528,7 +528,15 @@ const App = () => {
     <header className="header">
       <div className="header-content">
         <div className="logo-section">
-          <div className="logo">🧠 AI Learn</div>
+          <div className="logo">
+            <div className="logo-text">
+              <span className="logo-ai">AI</span>
+              <span className="logo-asset">ASSET</span>
+              <br />
+              <span className="logo-persona">PERSONA</span>
+            </div>
+            <div className="logo-subtitle">Learn</div>
+          </div>
           <div className="streak-counter">
             🔥 {userProgress.streak} day streak
           </div>
