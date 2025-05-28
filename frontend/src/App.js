@@ -209,6 +209,344 @@ const App = () => {
       ]
     },
     {
+      id: 'ai-in-action',
+      title: 'AI in Action: Real Case Studies',
+      description: 'See how major companies are using AI to transform their businesses.',
+      icon: '🏢',
+      unlocked: () => userProgress.completedModules.includes('ai-tools'),
+      xpReward: 200,
+      lessons: [
+        {
+          title: 'Netflix: The AI Recommendation Engine',
+          type: 'scenario',
+          content: `
+            <div class="lesson-content">
+              <h3>How Netflix Uses AI to Keep You Watching</h3>
+              
+              <div class="case-study-overview">
+                <div class="company-stats">
+                  <h4>📊 The Numbers:</h4>
+                  <div class="stats-grid">
+                    <div class="stat-item">
+                      <div class="stat-number">80%</div>
+                      <div class="stat-desc">of content watched comes from AI recommendations</div>
+                    </div>
+                    <div class="stat-item">
+                      <div class="stat-number">$1B</div>
+                      <div class="stat-desc">saved annually through reduced churn</div>
+                    </div>
+                    <div class="stat-item">
+                      <div class="stat-number">10+</div>
+                      <div class="stat-desc">different AI algorithms working together</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="ai-system-breakdown">
+                <h4>🤖 Netflix's AI Arsenal:</h4>
+                <div class="ai-systems">
+                  <div class="ai-system">
+                    <h5>👤 Personalization Algorithm</h5>
+                    <p><strong>What it does:</strong> Analyzes your viewing history, time of day, device used, and even where you pause or skip</p>
+                    <p><strong>Result:</strong> Your homepage looks completely different from everyone else's</p>
+                  </div>
+                  
+                  <div class="ai-system">
+                    <h5>🎨 Artwork Personalization</h5>
+                    <p><strong>What it does:</strong> Shows different movie posters to different users based on their preferences</p>
+                    <p><strong>Example:</strong> Action fans see explosion scenes, romance fans see couples</p>
+                  </div>
+                  
+                  <div class="ai-system">
+                    <h5>🎬 Content Creation AI</h5>
+                    <p><strong>What it does:</strong> Analyzes successful content patterns to guide new show development</p>
+                    <p><strong>Result:</strong> Data-driven decisions on which shows to greenlight</p>
+                  </div>
+                  
+                  <div class="ai-system">
+                    <h5>📱 Quality Optimization</h5>
+                    <p><strong>What it does:</strong> Adjusts video quality in real-time based on your internet speed</p>
+                    <p><strong>Result:</strong> Seamless streaming without buffering</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="business-impact">
+                <h4>💰 Business Impact:</h4>
+                <div class="impact-areas">
+                  <div class="impact-area">
+                    <h5>🎯 User Engagement</h5>
+                    <p>Average viewing time increased by 75% since implementing AI recommendations</p>
+                  </div>
+                  <div class="impact-area">
+                    <h5>💾 Content Costs</h5>
+                    <p>AI helps predict which content will be popular, reducing expensive flops</p>
+                  </div>
+                  <div class="impact-area">
+                    <h5>🌍 Global Expansion</h5>
+                    <p>AI enables personalization across different cultures and languages</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="lessons-learned">
+                <h4>🎓 Key Takeaways for Your Business:</h4>
+                <div class="takeaway">
+                  <h5>1. Start with Data Collection</h5>
+                  <p>Netflix didn't start with complex AI - they began by tracking what users watched</p>
+                </div>
+                <div class="takeaway">
+                  <h5>2. Focus on User Experience</h5>
+                  <p>Every AI feature serves to make the user experience better, not just to be "cool"</p>
+                </div>
+                <div class="takeaway">
+                  <h5>3. Test Everything</h5>
+                  <p>Netflix runs thousands of A/B tests to continuously improve their algorithms</p>
+                </div>
+                <div class="takeaway">
+                  <h5>4. Personalization = Retention</h5>
+                  <p>The more personalized the experience, the less likely users are to cancel</p>
+                </div>
+              </div>
+            </div>
+          `,
+          quiz: {
+            question: "What's the most important factor in Netflix's AI success?",
+            options: [
+              "Having the most advanced technology",
+              "Focusing on user experience and data collection",
+              "Spending the most money on AI",
+              "Copying what competitors do"
+            ],
+            correct: 1,
+            explanation: "Netflix succeeds because they focus on user experience and systematically collect data to improve it, not just because they have fancy technology!"
+          }
+        }
+      ]
+    },
+    {
+      id: 'ai-careers',
+      title: 'AI Career Opportunities',
+      description: 'Discover high-paying AI careers and how to break into them.',
+      icon: '💼',
+      unlocked: () => userProgress.completedModules.includes('ai-in-action'),
+      xpReward: 300,
+      lessons: [
+        {
+          title: 'Hottest AI Jobs in 2025',
+          type: 'interactive',
+          content: `
+            <div class="lesson-content">
+              <h3>AI Careers: Where the Money and Opportunity Are</h3>
+              
+              <div class="salary-overview">
+                <h4>💰 AI Salary Ranges (2025):</h4>
+                <div class="salary-tiers">
+                  <div class="salary-tier entry">
+                    <h5>🌱 Entry Level (0-2 years)</h5>
+                    <div class="salary-range">$70K - $120K</div>
+                    <p>Junior roles, bootcamp graduates, career changers</p>
+                  </div>
+                  <div class="salary-tier mid">
+                    <h5>📈 Mid Level (3-5 years)</h5>
+                    <div class="salary-range">$120K - $200K</div>
+                    <p>Experienced practitioners, specialized skills</p>
+                  </div>
+                  <div class="salary-tier senior">
+                    <h5>🚀 Senior Level (5+ years)</h5>
+                    <div class="salary-range">$200K - $500K+</div>
+                    <p>AI architects, research leads, top talent at big tech</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="career-paths">
+                <h4>🎯 Top AI Career Paths:</h4>
+                
+                <div class="career-path technical">
+                  <h5>👨‍💻 Technical Roles</h5>
+                  <div class="roles-list">
+                    <div class="role">
+                      <h6>Machine Learning Engineer</h6>
+                      <p><strong>What:</strong> Build and deploy ML models in production</p>
+                      <p><strong>Skills:</strong> Python, TensorFlow, Cloud platforms, MLOps</p>
+                      <p><strong>Salary:</strong> $130K - $300K</p>
+                    </div>
+                    
+                    <div class="role">
+                      <h6>AI Research Scientist</h6>
+                      <p><strong>What:</strong> Develop new AI algorithms and techniques</p>
+                      <p><strong>Skills:</strong> PhD preferred, research experience, mathematics</p>
+                      <p><strong>Salary:</strong> $180K - $500K+</p>
+                    </div>
+                    
+                    <div class="role">
+                      <h6>Data Scientist</h6>
+                      <p><strong>What:</strong> Extract insights from data using AI/ML</p>
+                      <p><strong>Skills:</strong> Statistics, Python/R, SQL, domain expertise</p>
+                      <p><strong>Salary:</strong> $110K - $250K</p>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="career-path business">
+                  <h5>💼 Business-Focused Roles</h5>
+                  <div class="roles-list">
+                    <div class="role">
+                      <h6>AI Product Manager</h6>
+                      <p><strong>What:</strong> Guide AI product development and strategy</p>
+                      <p><strong>Skills:</strong> Product management, AI understanding, business acumen</p>
+                      <p><strong>Salary:</strong> $140K - $350K</p>
+                    </div>
+                    
+                    <div class="role">
+                      <h6>AI Ethics Specialist</h6>
+                      <p><strong>What:</strong> Ensure responsible AI development and deployment</p>
+                      <p><strong>Skills:</strong> Ethics, policy, AI knowledge, communication</p>
+                      <p><strong>Salary:</strong> $120K - $250K</p>
+                    </div>
+                    
+                    <div class="role">
+                      <h6>AI Consultant</h6>
+                      <p><strong>What:</strong> Help companies implement AI solutions</p>
+                      <p><strong>Skills:</strong> Business analysis, AI knowledge, project management</p>
+                      <p><strong>Salary:</strong> $100K - $300K (or $500+ per hour)</p>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="career-path creative">
+                  <h5>🎨 Creative & Emerging Roles</h5>
+                  <div class="roles-list">
+                    <div class="role">
+                      <h6>Prompt Engineer</h6>
+                      <p><strong>What:</strong> Optimize AI prompts for best results</p>
+                      <p><strong>Skills:</strong> Language skills, AI tool expertise, creativity</p>
+                      <p><strong>Salary:</strong> $80K - $200K</p>
+                    </div>
+                    
+                    <div class="role">
+                      <h6>AI Content Creator</h6>
+                      <p><strong>What:</strong> Create content using AI tools professionally</p>
+                      <p><strong>Skills:</strong> Creative skills, AI tools mastery, marketing</p>
+                      <p><strong>Salary:</strong> $60K - $150K (highly variable)</p>
+                    </div>
+                    
+                    <div class="role">
+                      <h6>AI Trainer</h6>
+                      <p><strong>What:</strong> Train teams and individuals on AI tools</p>
+                      <p><strong>Skills:</strong> Teaching, AI expertise, curriculum development</p>
+                      <p><strong>Salary:</strong> $70K - $180K</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="getting-started-careers">
+                <h4>🚀 How to Break Into AI (Step by Step):</h4>
+                <div class="career-roadmap">
+                  <div class="roadmap-step">
+                    <span class="step-number">1</span>
+                    <div class="step-content">
+                      <h5>Build Foundation (Months 1-3)</h5>
+                      <ul>
+                        <li>Learn Python basics (free: Python.org tutorial)</li>
+                        <li>Complete Andrew Ng's Machine Learning Course</li>
+                        <li>Start using AI tools daily (ChatGPT, etc.)</li>
+                      </ul>
+                    </div>
+                  </div>
+                  
+                  <div class="roadmap-step">
+                    <span class="step-number">2</span>
+                    <div class="step-content">
+                      <h5>Choose Your Path (Month 4)</h5>
+                      <ul>
+                        <li>Technical: Focus on coding and math</li>
+                        <li>Business: Focus on strategy and communication</li>
+                        <li>Creative: Focus on AI tools and content</li>
+                      </ul>
+                    </div>
+                  </div>
+                  
+                  <div class="roadmap-step">
+                    <span class="step-number">3</span>
+                    <div class="step-content">
+                      <h5>Build Portfolio (Months 5-8)</h5>
+                      <ul>
+                        <li>Complete 3-5 real projects</li>
+                        <li>Document everything on GitHub</li>
+                        <li>Write blog posts about your learning</li>
+                      </ul>
+                    </div>
+                  </div>
+                  
+                  <div class="roadmap-step">
+                    <span class="step-number">4</span>
+                    <div class="step-content">
+                      <h5>Get Experience (Months 9-12)</h5>
+                      <ul>
+                        <li>Apply for internships or entry-level roles</li>
+                        <li>Contribute to open-source AI projects</li>
+                        <li>Network with AI professionals</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="career-resources">
+                <h4>📚 Essential Resources:</h4>
+                <div class="resource-categories">
+                  <div class="resource-category">
+                    <h5>🎓 Free Learning</h5>
+                    <ul>
+                      <li>Coursera ML Course (Andrew Ng)</li>
+                      <li>Fast.ai Practical Deep Learning</li>
+                      <li>Kaggle Learn (micro-courses)</li>
+                      <li>YouTube (3Blue1Brown, Two Minute Papers)</li>
+                    </ul>
+                  </div>
+                  
+                  <div class="resource-category">
+                    <h5>💻 Practice Platforms</h5>
+                    <ul>
+                      <li>Kaggle (competitions)</li>
+                      <li>Google Colab (free coding)</li>
+                      <li>GitHub (version control)</li>
+                      <li>HuggingFace (pre-trained models)</li>
+                    </ul>
+                  </div>
+                  
+                  <div class="resource-category">
+                    <h5>🌐 Networking</h5>
+                    <ul>
+                      <li>LinkedIn AI groups</li>
+                      <li>Reddit r/MachineLearning</li>
+                      <li>Local AI meetups</li>
+                      <li>Twitter AI community</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          `,
+          quiz: {
+            question: "What's the most important first step to break into AI careers?",
+            options: [
+              "Get a PhD in computer science",
+              "Spend $50,000 on a bootcamp",
+              "Build a foundation with free resources and start using AI tools",
+              "Apply to AI jobs immediately"
+            ],
+            correct: 2,
+            explanation: "Building a solid foundation with free resources and getting hands-on experience with AI tools is the most practical and cost-effective way to start your AI career!"
+          }
+        }
+      ]
+    },
+    {
       id: 'neural-networks',
       title: 'Neural Networks Simplified',
       description: 'Understanding the brain-inspired technology behind AI breakthroughs.',
