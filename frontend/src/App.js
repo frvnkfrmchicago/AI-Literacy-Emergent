@@ -2,27 +2,61 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 
 const App = () => {
-  const [currentView, setCurrentView] = useState('home');
-  const [userProgress, setUserProgress] = useState(() => {
-    const saved = localStorage.getItem('aiLearningProgress');
-    return saved ? JSON.parse(saved) : {
-      completedModules: [],
-      streak: 0,
-      lastActiveDate: null,
-      totalXP: 0,
-      badges: []
-    };
+  const [currentView, setCurrentView] = useState('signup');
+  const [currentUser, setCurrentUser] = useState(null);
+  const [userProgress, setUserProgress] = useState({
+    completedModules: [],
+    streak: 0,
+    lastActiveDate: null,
+    totalXP: 0,
+    badges: []
   });
   const [selectedModule, setSelectedModule] = useState(null);
   const [currentLesson, setCurrentLesson] = useState(0);
 
+  // Load user data and progress
+  useEffect(() => {
+    const savedUser = localStorage.getItem('currentUser');
+    if (savedUser) {
+      const user = JSON.parse(savedUser);
+      setCurrentUser(user);
+      
+      // Load user's progress
+      const savedProgress = localStorage.getItem(`progress_${user.email}`);
+      if (savedProgress) {
+        setUserProgress(JSON.parse(savedProgress));
+      }
+      setCurrentView('home');
+    }
+  }, []);
+
   // Save progress to localStorage whenever it changes
   useEffect(() => {
-    localStorage.setItem('aiLearningProgress', JSON.stringify(userProgress));
-  }, [userProgress]);
+    if (currentUser) {
+      localStorage.setItem(`progress_${currentUser.email}`, JSON.stringify(userProgress));
+      
+      // Also save to a master user list for tracking
+      const allUsers = JSON.parse(localStorage.getItem('allUsers') || '[]');
+      const userIndex = allUsers.findIndex(u => u.email === currentUser.email);
+      const userWithProgress = {
+        ...currentUser,
+        progress: userProgress,
+        lastActive: new Date().toISOString()
+      };
+      
+      if (userIndex >= 0) {
+        allUsers[userIndex] = userWithProgress;
+      } else {
+        allUsers.push(userWithProgress);
+      }
+      localStorage.setItem('allUsers', JSON.stringify(allUsers));
+    }
+  }, [userProgress, currentUser]);
 
   // Check and update streak
   useEffect(() => {
+    if (!currentUser) return;
+    
     const today = new Date().toDateString();
     const lastActive = userProgress.lastActiveDate;
     
@@ -53,7 +87,26 @@ const App = () => {
         }));
       }
     }
-  }, []);
+  }, [currentUser]);
+
+  const handleSignup = (userData) => {
+    setCurrentUser(userData);
+    localStorage.setItem('currentUser', JSON.stringify(userData));
+    setCurrentView('home');
+  };
+
+  const handleLogout = () => {
+    setCurrentUser(null);
+    localStorage.removeItem('currentUser');
+    setCurrentView('signup');
+    setUserProgress({
+      completedModules: [],
+      streak: 0,
+      lastActiveDate: null,
+      totalXP: 0,
+      badges: []
+    });
+  };
 
   const modules = [
     {
